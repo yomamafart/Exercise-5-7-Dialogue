@@ -1,0 +1,49 @@
+[gd_scene load_steps=10 format=3 uid="uid://up41txww8qg1"]
+
+[ext_resource type="Texture2D" uid="uid://bgk17llnfou8" path="res://Assets/sky.jpg" id="1"]
+[ext_resource type="PackedScene" uid="uid://btx461csnea1j" path="res://Player/Player.tscn" id="2"]
+[ext_resource type="PackedScene" uid="uid://wcu16iwyywfm" path="res://Player/Zombie.tscn" id="3"]
+
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_30th5"]
+panorama = ExtResource("1")
+
+[sub_resource type="Sky" id="1"]
+sky_material = SubResource("PanoramaSkyMaterial_30th5")
+
+[sub_resource type="Environment" id="2"]
+background_mode = 2
+background_color = Color(0.52549, 0.556863, 0.588235, 1)
+sky = SubResource("1")
+ambient_light_source = 3
+
+[sub_resource type="PlaneMesh" id="3"]
+size = Vector2(20, 20)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y1fe0"]
+albedo_color = Color(0.12549, 0.12549, 0.12549, 1)
+
+[sub_resource type="ConvexPolygonShape3D" id="5"]
+points = PackedVector3Array(20, 0, 20, -20, 0, 20, 20, 0, -20, -20, 0, -20)
+
+[node name="Game" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("2")
+
+[node name="Ground" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Ground"]
+mesh = SubResource("3")
+surface_material_override/0 = SubResource("StandardMaterial3D_y1fe0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Ground"]
+shape = SubResource("5")
+
+[node name="Player" parent="." instance=ExtResource("2")]
+transform = Transform3D(0.117433, 0, 0.993081, 0, 1, 0, -0.993081, 0, 0.117433, -2.24119, 0, -2.23691e-07)
+
+[node name="Zombie" parent="." instance=ExtResource("3")]
+transform = Transform3D(-0.122701, 0, -0.992444, 0, 1, 0, 0.992444, 0, -0.122701, 5, 0, 0)
+
+[node name="Camera" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 0.965926, 0.258819, 0, -0.258819, 0.965926, 0, 5, 10)
