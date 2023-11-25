@@ -2,6 +2,8 @@
 
 Exercise for MSCH-C220
 
+A demonstration of this exercise is available at [https://youtu.be/whUbxNm16HM](https://youtu.be/whUbxNm16HM).
+
 This exercise is an opportunity for you to experiment with an open source Godot Dialogue add-on called Dialogue Manager. Dialogue Manager is [still in very active development](https://github.com/nathanhoad/godot_dialogue_manager)—its Godot 4 release is currently at 2.29.0. It is still a little tricky to use around the edges, but it is a powerful system for creating and introducing dialogue systems into your games.
 
 Fork this repository. When that process has completed, make sure that the top of the repository reads [your username]/Exercise-5-7-Dialogue. *Edit the LICENSE and replace BL-MSCH-C220 with your full name.* Commit your changes.
