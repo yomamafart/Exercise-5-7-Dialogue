@@ -1,6 +1,6 @@
 [gd_scene load_steps=10 format=3 uid="uid://up41txww8qg1"]
 
-[ext_resource type="Texture2D" uid="uid://bgk17llnfou8" path="res://Assets/sky.jpg" id="1"]
+[ext_resource type="Texture2D" uid="uid://b4qewy3tlqgme" path="res://Assets/sky.jpg" id="1"]
 [ext_resource type="PackedScene" uid="uid://btx461csnea1j" path="res://Player/Player.tscn" id="2"]
 [ext_resource type="PackedScene" uid="uid://wcu16iwyywfm" path="res://Player/Zombie.tscn" id="3"]
 
